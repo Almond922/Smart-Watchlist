@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  /* Black + gold theme */
+  --bg: #0a0908;
+  --surface: #14120f;
+  --surface-hover: #1c1915;
+  --surface-raised: #1c1915;
+  --border: #2e2a22;
+  --border-soft: #221f19;
+  --text-primary: #f3ecd9;
+  --text-secondary: #a89f8c;
+  --text-muted: #6f6858;
+
+  --attention: #e8a33d;
+  --attention-dim: #6b5327;
+  --positive: #4fb477;
+  --positive-dim: rgba(79, 180, 119, 0.12);
+  --negative: #d9584f;
+  --negative-dim: rgba(217, 88, 79, 0.12);
+  --stale: #6f6858;
+
+  /* Gold gradient accent used for primary CTAs, the brand mark, and the
+     active-nav state — the one spot of color-forward branding in an
+     otherwise black, data-dense UI. */
+  --accent-from: #d4af37;
+  --accent-to: #f4d160;
+  --gold: #d4af37;
+  --gold-soft: rgba(212, 175, 55, 0.12);
+  --gold-border: rgba(212, 175, 55, 0.35);
+
+  /* System-font stacks, deliberately not loaded from a CDN: an app whose
+     whole thesis is "handle unreliable data sources gracefully" shouldn't
+     make its own render depend on a webfont fetch succeeding. */
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-attention: var(--attention);
+  --color-attention-dim: var(--attention-dim);
+  --color-positive: var(--positive);
+  --color-positive-dim: var(--positive-dim);
+  --color-negative: var(--negative);
+  --color-negative-dim: var(--negative-dim);
+  --color-stale: var(--stale);
+  --color-accent-from: var(--accent-from);
+  --color-accent-to: var(--accent-to);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-border: var(--gold-border);
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.accent-gradient {
+  background-image: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+}
+
+.accent-gradient-text {
+  background-image: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-glow-positive {
+  box-shadow: 0 0 0 1px rgba(79, 180, 119, 0.35);
+}
+
+.card-glow-negative {
+  box-shadow: 0 0 0 1px rgba(217, 88, 79, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
