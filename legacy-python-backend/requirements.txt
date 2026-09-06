@@ -4,5 +4,5 @@ sqlalchemy
 pydantic[email]
 websockets
 requests
-python-dotenvpython-dotenv
+python-dotenv
 psycopg2-binary
